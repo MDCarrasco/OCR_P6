@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function(event) {
-    fetch("http://127.0.0.1:8000/api/v1/titles/?year=&min_year=&max_year=&imdb_score=&imdb_score_min=&imdb_score_max=&title=&title_contains=&genre=&genre_contains=&sort_by=-imdb_score&director=&director_contains=&writer=&writer_contains=&actor=&actor_contains=&country=&country_contains=&lang=&lang_contains=&company=&company_contains=&rating=&rating_contains=")
+    fetch("http://127.0.0.1:8000/api/v1/titles/?sort_by=-imdb_score")
         .then(response => response.json())
         .then(function (response) {
             const movieSection = document.getElementById('movie-section')
@@ -27,4 +27,22 @@ document.addEventListener("DOMContentLoaded", function(event) {
             return response
         })
         .catch(error => alert("Erreur : " + error));
+    var count = 0
+    fetch("http://127.0.0.1:8000/api/v1/genres/")
+        .then(response => response.json())
+        .then(response => count = response.count)
+        .catch(error => alert("Erreur : " + error));
+    var base = "http://127.0.0.1:8000/api/v1/titles/?min_year=2000"
+    var genre = "&genre="
+    var sort = "&sort_by=-imdb_score"
+    var page = "&page="
+    /* TODO */
+    for (let i = 0; i < count; i++) {
+        fetch(base + genre + String(count) + sort + page + String(count))
+            .then(response => response.json())
+            .then(function (response) {
+                alert(JSON.stringify(response))
+            })
+            .catch(error => alert("Erreur : " + error));
+    }
 });
