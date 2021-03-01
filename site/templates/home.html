@@ -5,7 +5,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>JustStreamIt</title>
         <link rel="stylesheet" href="../static/css/style.css" />
-        <link rel="stylesheet" href="../static/css/carousel.css" />
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
@@ -51,31 +50,68 @@
         </section>
 
 
-        {% for category in categories %}
-        <section class="carousel">
-            <div class="carousel__wrapper">
-                <div class="nav nav-left">
-                    <div class="ion-chevron-left carousel-arrow-icon-left"></div>
-                </div>
-                <div class="carousel__content">
-                    <h2 class="carousel__title"> {{ category }}</h2>
-                    <div class="carousel__items">
-                        {% for data in categories[category] %}
-                        <div class="carousel__items__container">
-                            <img id={{ data[0] }}  class="carousel__items__image" src={{ data[1] }} alt="movie" />
+        <div id="carousels-section">
+            <section class="carousel">
+                <div class="carousel__wrapper">
+                    <div class="nav nav-left">
+                        <div class="ion-chevron-left carousel-arrow-icon-left"></div>
+                    </div>
+                    <div class="carousel__content carousel-content">
+                        <h2 class="carousel__title"> {{ category }}</h2>
+                        <div class="carousel__items">
+                            <div class="carousel__items__container">
+                            </div>
                         </div>
-                        {% endfor %}
+                    </div>
+                    <div class="nav nav-right">
+                        <div class="ion-chevron-right carousel-arrow-icon-right"></div>
                     </div>
                 </div>
-                <div class="nav nav-right">
-                    <div class="ion-chevron-right carousel-arrow-icon-right"></div>
+            </section>
+        </div>
+
+        <section class="modal">
+            <div class="modal__content">
+                <div class="modal__header">
+                    <h4 class="modal__header__title">Titre</h4>
+                    <div class="modal__header__close">
+                        <img class="modal__header__close__img" src="../static/img/close_button.png"  alt="close" />
+                    </div>
+                </div>
+
+                <div class="modal__body">
+                    <div class="modal__body__right">
+                        <p class="modal__body__country"></p>
+                        <img class="modal__body__img" alt="movie" />
+                        <div class="modal__body__info">
+                            <p>rate</p>
+                            <p>year</p>
+                            <p>time</p>
+                        </div>
+                    </div>
+
+                    <div class="modal__body__left">
+                        <div class="modal__body__btn">
+                            <div class="modal__body__btn__triangle"></div>
+                            <div class="modal__body__btn__text">Play</div>
+                        </div>
+                        <p class="modal__body__genre"></p>
+                        <p class="modal__body__plot"></p>
+                        <p class="modal__body__directors"></p>
+                        <details class="modal__body__details">
+                            <summary class="modal__body__summary">Actors:</summary>
+                            <p class="modal__body__actors"></p>
+                        </details>
+                        <p class="modal__body__actors--landscape"></p>
+                        <p class="modal__body__boxoffice__title">
+                        Worldwide gross income: <span class="modal__body__boxoffice__dollars"></span>
+                        </p>
+                        <p class="modal__body__rated"></p>
+                    </div>
+
                 </div>
             </div>
         </section>
-        {% endfor %}
-
-
-        {% include 'modal.html' %}
 
         <footer class='footer'>
             <a class="footer__link" href="#">
@@ -84,8 +120,8 @@
         </footer>
 
     </body>
-    <script src="../static/js/home.js"></script>
+    <script src="../static/js/fetch.js"></script>
+    <script src="../static/js/fetch2.js" defer></script>
     <script src="../static/js/carousel.js"></script>
     <script src="../static/js/modal.js"></script>
-    <script src="../static/js/fetch.js"></script>
 </html>
