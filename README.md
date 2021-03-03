@@ -30,3 +30,7 @@ pipenv run python manage.py runserver
 ```bash
 python ./pyserver.py
 ```
+
+## Usage
+
+Just open 127.0.0.1:5000/templates/home.html in either Chrome or Firefox browser.
