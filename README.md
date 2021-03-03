@@ -33,4 +33,6 @@ python ./pyserver.py
 
 ## Usage
 
-Just open 127.0.0.1:5000/templates/home.html in either Chrome or Firefox browser.
+Just open 127.0.0.1:5000/templates/home.html in either Chrome or Firefox browser.    
+(MacOS) Hit CTRL + C in term when you're done.    
+(Windows) Hit CTRL + C in both terms when you are done.
