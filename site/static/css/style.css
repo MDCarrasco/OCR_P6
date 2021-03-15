@@ -6,15 +6,17 @@ a, a:active {
 body {
     margin: 0;
     background-color: #141414;
-    -ms-overflow-style: none;
+    /* -ms-overflow-style: none; */
     /* IE and Edge */
-    scrollbar-width: none;
+    /* scrollbar-width: none; */
     /* Firefox */
 }
 
+/*
 body::-webkit-scrollbar {
     display: none;
 }
+*/
 
 ul {
     list-style-type: none;
@@ -339,7 +341,7 @@ p {
     border: none;
     outline: none;
     color: white;
-    -webkit-user-select: none;
+    /* -webkit-user-select: none; */
 }
 
 .nav-left {
